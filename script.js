@@ -228,42 +228,51 @@ document.addEventListener('DOMContentLoaded', () => {
         passwordInput.value = '';
     }
 });
-const apiKey = '156094e5-0cb1-4635-86da-c71b11223ec4';  // Replace with your actual API key
-
 document.getElementById('searchBtn').addEventListener('click', function() {
-    const newsQuery = document.getElementById('newsQuery').value.trim();
+    // Get the book title from the input field
+    const bookTitle = document.getElementById('bookTitle').value.trim();
 
-    if (newsQuery) {
-        // Update API URL
-        const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(newsQuery)}&apiKey=${apiKey}`;
+    if (bookTitle) {
+        // API endpoint with the book title
+        const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(bookTitle)}&maxResults=5`;
 
+        // Fetch the data from the Google Books API
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const resultsContainer = document.getElementById('newsResults');
-                resultsContainer.innerHTML = '';  // Clear previous results
+                const resultsContainer = document.getElementById('bookResults');
+                resultsContainer.innerHTML = '';  // Clear any previous results
 
-                if (data.articles && data.articles.length > 0) {
-                    data.articles.forEach(article => {
-                        const articleElement = document.createElement('div');
-                        articleElement.classList.add('news-article');
-                        articleElement.innerHTML = `
-                            <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
-                            <p><strong>Author:</strong> ${article.author || 'Unknown'}</p>
-                            <p><strong>Published:</strong> ${new Date(article.publishedAt).toLocaleString()}</p>
-                            <p><strong>Description:</strong> ${article.description || 'No description available'}</p>
+                if (data.items) {
+                    // Loop through each book item
+                    data.items.forEach(item => {
+                        const book = item.volumeInfo;
+                        const bookElement = document.createElement('div');
+                        bookElement.classList.add('book');
+                        
+                        // Display book information
+                        bookElement.innerHTML = `
+                            <h3>${book.title}</h3>
+                            <p><strong>Author:</strong> ${book.authors ? book.authors.join(', ') : 'Unknown'}</p>
+                            <p><strong>Published:</strong> ${book.publishedDate}</p>
+                            <p><strong>Description:</strong> ${book.description ? book.description.substring(0, 200) + '...' : 'No description available'}</p>
+                            <a href="${book.infoLink}" target="_blank">More Info</a>
                         `;
-                        resultsContainer.appendChild(articleElement);
+                        
+                        // Append book details to the results container
+                        resultsContainer.appendChild(bookElement);
                     });
                 } else {
-                    resultsContainer.innerHTML = 'No news articles found for this query.';
+                    resultsContainer.innerHTML = 'No books found.';
                 }
             })
             .catch(error => {
-                console.error('Error fetching news data:', error);
-                document.getElementById('newsResults').innerHTML = 'Failed to load news articles.';
+                console.error('Error fetching book data:', error);
+                document.getElementById('bookResults').innerHTML = 'Failed to load results.';
             });
     } else {
-        alert('Please enter a keyword to search for news!');
+        alert('Please enter a book title to search!');
     }
 });
+
+

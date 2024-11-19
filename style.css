@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1.hhead {
+    color: aliceblue;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+p.phead {
+    color: aliceblue;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+main {
+    padding: 20px;
+}
+
+section.featured-news {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-news img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h2.head2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+section.news-articles {
+    margin-bottom: 20px;
+}
+
+section.news-articles article {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.news-articles img {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.zoom-image {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: auto;
+}
+
+.news-articles article:hover .zoom-image {
+    transform: scale(1.05);
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card-header {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+
+.accordion-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.card-body {
+    display: none; /* Hide content by default */
+    padding: 10px;
+    background-color: #ffffff; /* White background for content */
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+#changeColorBtn {
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .bg-dark {
+    background-color: #333 !important;
+}
+
+.dark-mode header, .dark-mode footer {
+    background-color: #222;
+    color: #ddd;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Filter Buttons Styling */
+.filter-btn {
+    background-color: #007bff; /* Primary blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+/* Hover Effect */
+.filter-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift button slightly on hover */
+}
+
+/* Active Button State */
+.filter-btn:active {
+    background-color: #003f7f; /* Even darker blue when active */
+    transform: translateY(2px); /* Slightly push button down */
+}
+
+/* Selected Button */
+.filter-btn.selected {
+    background-color: #28a745; /* Green for selected */
+    color: white;
+    font-weight: bold;
+}
+/* style.css */
+
+#bookResults {
+    margin-top: 20px;
+}
+
+.book {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.book h3 {
+    font-size: 1.5em;
+}
+
+.book p {
+    margin: 5px 0;
+}
+
+.book a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.book a:hover {
+    text-decoration: underline;
+}
+

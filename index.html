@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global News Today</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="bg-dark text-white text-center py-4">
+        <h1 class="hhead">Global News Today</h1>
+        <p class="phead">Your Source for the Latest News Around the World</p>
+          <<div id="loginSection">
+            <input type="text" id="username" placeholder="Enter username" class="form-control d-inline w-auto" />
+            <input type="password" id="password" placeholder="Enter password" class="form-control d-inline w-auto" />
+            <button id="loginBtn" class="btn btn-primary">Login</button>
+            <button id="signupBtn" class="btn btn-success">Sign Up</button>
+        </div>
+
+    <div id="authStatus" class="mt-2"></div>
+    <button id="logoutBtn" class="btn btn-warning" style="display: none;">Logout</button>
+    <button id="toggleTheme" class="btn btn-dark">Dark Mode</button>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Global News</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="navMenu" class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="world.html" tabindex="0">World</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sports.html" tabindex="0">Sports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="technology.html" tabindex="0">Technology</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <main class="container my-4">
+        <h2 class="text-center">Welcome to Global News</h2>>
+
+
+     <div class="filter-section">
+    <button class="filter-btn" data-category="all">All News</button>
+    <button class="filter-btn" data-category="world">World</button>
+    <button class="filter-btn" data-category="sports">Sports</button>
+    <button class="filter-btn" data-category="technology">Technology</button>
+</div>
+
+<div id="newsCatalog">
+    <article class="news-article" data-category="world">
+        <h3>World News</h3>
+        <p>Natural Disaster Recovery Efforts Continue</p>
+        <img class="col-md-4 mb-4" src="https://imgs.search.brave.com/_uW46AHIG_g9ohgzOu8h_jgfWRJHYqsldIIWX5MuhdE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hY3Vp/dHlpbnRlcm5hdGlv/bmFsLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMi9j/b21tdW5pdHktc2hl/bHRlcnMtcG9zdC1k/aXNhc3Rlci1yZWNv/dmVyeS0xMDI0eDY4/My5qcGc">
+    </article>
+    <article class="news-article" data-category="sports">
+        <h3>Sports News</h3>
+        <p>Cristiano Ronaldo urges Manchester United to ‘rebuild everything’ as the club looks to rediscover past success...</p>
+        <img class="col-md-4 mb-4" src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2158797838.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" class="card-img-top">
+    </article>
+    <article class="news-article" data-category="technology">
+        <h3>Technology News</h3>
+        <p>Apple back taxes hand Ireland infrastructure opportunities</p>
+        <img class="col-md-4 mb-4" src="https://www.reuters.com/resizer/v2/ZPKBCQ3IPJNTXKLBDKXNK7IJ4E.jpg?auth=86bff36f288d8868340f88b9309cef762ddff7fb6bb4722c31fc2f7ef76074bd&width=720&quality=80" class="card-img-top" alt="Apple back taxes">
+    </article>
+    <!-- Add more news articles as needed -->
+</div>
+<section id="bookSearchSection">
+    <h2 class="text-center">Search for Books</h2>
+    <input type="text" id="bookSearchInput" placeholder="Enter book title or author" class="form-control" />
+    <button id="bookSearchBtn" class="btn btn-primary">Search</button>
+
+    <div id="bookResults" class="mt-4">
+        <!-- Book results will appear here -->
+    </div>
+</section>
+
+</div>
+        <!-- Display Current Date and Time -->
+        <section class="mb-4">
+            <h3>Current Date and Time</h3>
+            <div id="dateTime" class="border p-2"></div>
+        </section>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Frequently Asked Questions</h1>
+    <div class="accordion" id="faqAccordion">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <button class="accordion-button">What is your return policy?</button>
+                </h2>
+            </div>
+            <div class="card-body">
+                You can return any item within 30 days for a full refund.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <button class="accordion-button">How do I track my order?</button>
+                </h2>
+            </div>
+            <div class="card-body">
+                You will receive a tracking link via email once your order has shipped.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <button class="accordion-button">Can I change my order?</button>
+                </h2>
+            </div>
+            <div class="card-body">
+                Yes, you can change your order within 1 hour of placing it.
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Global News Today. All rights reserved.</p>
+        <p>Contact us: info@globalnewstoday.com</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
